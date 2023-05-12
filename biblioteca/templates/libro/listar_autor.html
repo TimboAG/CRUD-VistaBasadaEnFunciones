@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+<!--    -->
+{% block titulo %} lista de autores{% endblock titulo %} {% block cuerpo %}
+<h1>Lista de autores</h1>
+{% if autores %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">nombre</th>
+      <th scope="col">apellido</th>
+      <th scope="col">nacionalidad</th>
+      <th scope="col">descripcion</th>
+      <th scope="col">fecha_creacion</th>
+    </tr>
+  </thead>
+  {% for autor in autores %}
+  <tbody>
+    <tr>
+      <th scope="row">{{autor.id}}</th>
+      <th scope="row">{{autor.nombre}}</th>
+      <th scope="row">{{autor.apellido}}</th>
+      <th scope="row">{{autor.nacionalidad}}</th>
+      <th scope="row">{{autor.descripcion}}</th>
+      <th scope="row">{{autor.fecha_creacion}}</th>
+    </tr>
+  </tbody>
+
+  {% endfor %}
+</table>
+{%else %}
+<p>No hay autores registrados.</p>
+{% endif %} {% endblock cuerpo %}

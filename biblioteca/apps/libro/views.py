@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import AutorForms
+from .models import Autor
 
 # Create your views here.
 def Home(request):
@@ -14,3 +15,8 @@ def crear_autor(request):
     else:
         autor_form= AutorForms()
     return render(request, 'crear_autor.html', {'autor_form': autor_form})
+
+def listar_autor(request):
+    autores = Autor.objects.all()
+    return render(request, 'listar_autor.html', {'autores': autores})
+    
