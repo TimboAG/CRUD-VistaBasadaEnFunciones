@@ -28,6 +28,9 @@
         <a type="button" href="{% url 'libro:editar_autor' autor.id %}">
           Editar
         </a>
+        <a type="button" href="{% url 'libro:eliminar_autor' autor.id %}">
+          eliminar
+        </a>
       </td>
     </tr>
     {% endfor %}
