@@ -23,4 +23,17 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('libro/', include( ('apps.libro.urls', 'libro') ) ),
     path('home/', Home, name='index'),
+    
+    #si quiero pasar un parametro string 
+    # path('home/<slug:titulo>', Home, name='index'),
+    
+    #si quiero pasar unparametro entero 
+    # path('home/<int:pk>', Home, name='index'),
+    
+    #si quiero pasar ambos parametros  
+    # path('home/<slug:titulo>/<int:pk>', Home, name='index'),
+    
+    #Antes se usaban expresiones regulares para enviar parametros
+    #En django 1.11 hacia abajo 
+    # re_path(r'home/(?P<int>d+)', Home, name='index'),
 ]

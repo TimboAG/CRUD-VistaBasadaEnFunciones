@@ -2,7 +2,10 @@
 <!--    -->
 {% block titulo %} crear autor{% endblock titulo %} {% block cuerpo %}
 <form action="" method="POST">
-  {{autor_form.as_p}} {% csrf_token %}
+  {% csrf_token %} {% if error %}
+  <h2>{{error}}</h2>
+  {% else %} {{autor_form.as_p}} {% endif %}
+
   <button class="btn" type="submit">Crear</button>
 </form>
 {% endblock cuerpo %}

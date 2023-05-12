@@ -11,22 +11,27 @@
       <th scope="col">apellido</th>
       <th scope="col">nacionalidad</th>
       <th scope="col">descripcion</th>
-      <th scope="col">fecha_creacion</th>
+      <th scope="col">fecha creacion</th>
+      <th scope="col">opcion</th>
     </tr>
   </thead>
-  {% for autor in autores %}
   <tbody>
+    {% for autor in autores %}
     <tr>
-      <th scope="row">{{autor.id}}</th>
-      <th scope="row">{{autor.nombre}}</th>
-      <th scope="row">{{autor.apellido}}</th>
-      <th scope="row">{{autor.nacionalidad}}</th>
-      <th scope="row">{{autor.descripcion}}</th>
-      <th scope="row">{{autor.fecha_creacion}}</th>
+      <td scope="row">{{autor.id}}</td>
+      <td scope="row">{{autor.nombre}}</td>
+      <td scope="row">{{autor.apellido}}</td>
+      <td scope="row">{{autor.nacionalidad}}</td>
+      <td scope="row">{{autor.descripcion}}</td>
+      <td scope="row">{{autor.fecha_creacion}}</td>
+      <td scope="row">
+        <a type="button" href="{% url 'libro:editar_autor' autor.id %}">
+          Editar
+        </a>
+      </td>
     </tr>
+    {% endfor %}
   </tbody>
-
-  {% endfor %}
 </table>
 {%else %}
 <p>No hay autores registrados.</p>
