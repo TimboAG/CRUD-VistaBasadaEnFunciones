@@ -1,7 +1,8 @@
 from django.urls import path
-from .views import Home
+from .views import crear_autor
+
 
 
 urlpatterns = [
-    path('',Home, name='index'),
+    path('crear_autor/', crear_autor, name='crear_autor')
 ]
